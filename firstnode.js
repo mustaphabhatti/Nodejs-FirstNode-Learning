@@ -6,19 +6,19 @@ function requestlistener(req, res) {
     if (req.url === "/") {
         res.setHeader("Content-Type", "text/html");
         res.write(`<h1>Welcome to the Home Page</h1>`);
-        res.end();
+        return res.end();
     }
 
     else if (req.url === "/about") {
         res.setHeader("Content-Type", "text/html");
         res.write(`<h1>Welcome to the About Page</h1>`);
-        res.end();
+        returnres.end();
     }
 
     else {
         res.setHeader("Content-Type", "text/html");
         res.write(`<h1>404 Page Not Found</h1>`);
-        res.end();
+        return res.end();
     }
 }
 
