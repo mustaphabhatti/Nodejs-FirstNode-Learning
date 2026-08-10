@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 
 function requestlistener(req, res) {
     console.log(req.url, req.method, req.headers);
@@ -18,6 +19,13 @@ function requestlistener(req, res) {
         res.write('<input type="submit" value="Submit">');
         res.write('</form>');
         res.write('</body>');
+        return res.end();
+    }
+
+    else if( req.url.toLowerCase() === "/submit-details" && req.method === "POST") {
+        fs.writeFileSync('user-details.txt', 'User Details:\n');
+        res.statusCode = 302;
+        res.setHeader('Location', '/');
         return res.end();
     }
 }
