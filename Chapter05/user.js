@@ -34,12 +34,14 @@ function requestlistener(req, res) {
             const userData = Buffer.concat(body).toString();
 
             const params = new URLSearchParams(userData);
-            const bodyObject ={};
+            // const bodyObject ={};
 
-            for (const [key, val] of params.entries()) {
-                bodyObject[key] = val;
-                console.log(bodyObject);
-            }
+            // for (const [key, val] of params.entries()) {
+            //     bodyObject[key] = val;
+            //     console.log(bodyObject);
+            // }
+
+            const bodyObject = Object.fromEntries(params.entries());
             console.log(bodyObject);
         });
     }
