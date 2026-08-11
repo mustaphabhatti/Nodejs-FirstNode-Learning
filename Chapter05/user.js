@@ -43,6 +43,7 @@ function requestlistener(req, res) {
 
             const bodyObject = Object.fromEntries(params.entries());
             console.log(bodyObject);
+            fs.writeFileSync('D:\\NodeJs\\user-details.txt', JSON.stringify(bodyObject));
         });
     }
 }
