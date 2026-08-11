@@ -45,6 +45,9 @@ function requestlistener(req, res) {
             console.log(bodyObject);
             fs.writeFileSync('D:\\NodeJs\\user-details.txt', JSON.stringify(bodyObject));
         });
+
+        req.statusCode = 302;
+        res.setHeader('Location', '/');
     }
 }
 
