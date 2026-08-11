@@ -1,7 +1,6 @@
-const http = require('http');
 const fs = require('fs');
 
-function requestlistener(req, res) {
+const requestlistener = (req, res) => {
     console.log(req.url, req.method, req.headers);
 
     if (req.url === "/") {
@@ -46,14 +45,9 @@ function requestlistener(req, res) {
             fs.writeFileSync('D:\\NodeJs\\user-details.txt', JSON.stringify(bodyObject));
         });
     }
-        req.statusCode = 302;
-        res.setHeader('Location', '/');
+    
+    req.statusCode = 302;
+    res.setHeader('Location', '/');
 }
 
-const server = http.createServer(requestlistener);
-
-const PORT = 3001;
-
-server.listen(PORT, () => {
-    console.log("Server Listening on address http://localhost:" + PORT);
-});
+module.exports = requestlistener;
