@@ -49,8 +49,8 @@ const requesthandler = (req, res) => {
             res.write('<br><a href="/calculator">Go Back</a>');
             return res.end();
         });
-    }
 
+        
     else {
         res.setHeader("Content-Type", "text/html");
         res.write(`<title>Mustafa's site</title>`);
@@ -58,6 +58,8 @@ const requesthandler = (req, res) => {
         res.write('<button><a href="/">Go Back to Home Page</a></button>');
         return res.end();
     }
+    }
+
 };
 
 module.exports = requesthandler;
