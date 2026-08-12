@@ -1,7 +1,7 @@
 const addNumbers = require('./addition');
 
 const requesthandler = (req, res) => {
-    console.log(req.url, req.headers);
+    console.log(req.url, req.method, req.headers);
 
     if (req.url === "/") {
         res.setHeader("Content-Type", "text/html");
