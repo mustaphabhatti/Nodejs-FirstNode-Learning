@@ -16,7 +16,7 @@ const requesthandler = (req, res) => {
         res.write(`<title>Calculator</title>`);
         res.write(`<h1>Welcome to the Calculator Page</h1><br>`);
         res.write('<form method="POST" action="/calculate-result">');
-        res.write('<input type="number" id="num1" name="num1" placeholder="Enter First Number"><br><br>');
+        res.write('<input type="number" id="num1" name="num1" placeholder="Enter First Number"><br>');
         res.write('<input type="number" id="num2" name="num2" placeholder="Enter Second Number"><br><br>');
         res.write('<button type="submit">Sum</button>');
         res.write('</form>');
