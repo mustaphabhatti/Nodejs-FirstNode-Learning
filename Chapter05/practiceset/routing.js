@@ -50,14 +50,13 @@ const requesthandler = (req, res) => {
             return res.end();
         });
 
-        
-    else {
+    }   
+    else{
         res.setHeader("Content-Type", "text/html");
         res.write(`<title>Mustafa's site</title>`);
         res.write(`<h1>404 Page Not Found</h1><br>`);
         res.write('<button><a href="/">Go Back to Home Page</a></button>');
         return res.end();
-    }
     }
 
 };
