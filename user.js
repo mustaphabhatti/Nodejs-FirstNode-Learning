@@ -23,7 +23,11 @@ function requestlistener(req, res) {
     }
 
     else if( req.url.toLowerCase() === "/submit-details" && req.method === "POST") {
-        fs.writeFileSync('user-details.txt', 'User Details:\n');
+        fs.writeFile('user-details.txt', 'User Details:\n', (err) => {
+            if (err) {
+                console.error('Error writing to file:', err);
+            }
+        });
         res.statusCode = 302;
         res.setHeader('Location', '/');
         return res.end();
