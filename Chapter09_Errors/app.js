@@ -1,5 +1,6 @@
 const http = require('http');
 const logicalError = require('./logical');
+const runtimeError = require('./runtime');
 
 const server = http.createServer((req, res) => {
     console.log(req);
