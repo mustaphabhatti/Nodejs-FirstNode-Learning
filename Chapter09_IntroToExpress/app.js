@@ -14,6 +14,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     console.log("Second Middleware", req.url, req.method);
+    res.send("<h1>Welcome to Mustafa Site - Express Test</h1>");
     next();
 });
 
