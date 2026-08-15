@@ -1,0 +1,27 @@
+{
+  "name": "chapter09_introtoexpress",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mustaphabhatti/Nodejs-FirstNode-Learning#readme",
+  "bugs": {
+    "url": "https://github.com/mustaphabhatti/Nodejs-FirstNode-Learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustaphabhatti/Nodejs-FirstNode-Learning.git"
+  },
+  "license": "ISC",
+  "author": "Mustafa",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "restart": "true"
+
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
