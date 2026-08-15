@@ -1,5 +1,3 @@
-//Core Modules
-const http = require('http');
 //External Modules
 const express = require('express');
 //Local Modules
@@ -18,10 +16,8 @@ app.use((req, res, next) => {
     next();
 });
 
-const server = http.createServer(app);
-
 const PORT = 3001;
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log("Server Listening on address http://localhost:" + PORT);
 });
