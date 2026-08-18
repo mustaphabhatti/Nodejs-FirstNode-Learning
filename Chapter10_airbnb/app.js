@@ -2,9 +2,12 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {
+app.get("/", (req, res, next) => {
     console.log(req.url, req.methods);
-    res.send("Welcome to Airbnb Clone Project");
+    res.send(
+        `<h1>Welcome to Airbnb Clone Project</h1>
+        <a href="/add-home">Add Home</a>`
+    );
     next();
 });
 
