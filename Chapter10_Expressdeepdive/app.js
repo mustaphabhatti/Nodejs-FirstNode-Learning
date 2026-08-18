@@ -50,7 +50,21 @@ app.get("/contact-us", (req, res) => {
 });
 
 app.post("/contact-us", (req, res) => {
-    console.log("Fifth Middleware");
+    console.log("Fifth Middleware", req.body);
+
+    res.send(`
+        <h1>POST request received on Contact Page</h1>
+    `);
+    next();
+});
+
+app.use(bodyParser.urlencoded());
+{
+
+}
+
+app.post("/contact-us", (req, res) => {
+    console.log("Fifth Middleware", req.body);
 
     res.send(`
         <h1>POST request received on Contact Page</h1>
