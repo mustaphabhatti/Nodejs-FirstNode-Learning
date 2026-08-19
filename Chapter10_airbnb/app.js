@@ -1,5 +1,7 @@
 const express = require('express');
 
+const userRouter = require('./routes/userRouter');
+
 const app = express();
 
 app.use((req, res, next) => {
@@ -9,18 +11,12 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded());
 
-app.get("/", (req, res, next) => {
-    res.send(
-        `<h1>Welcome to Airbnb Clone Project</h1>
-        <a href="/add-home">Add Home</a>`
-    );
-    next();
-});
+app.use(userRouter);
 
-app.get("/add-home", (req, res, next) => {
+app.get("/host/add-home", (req, res, next) => {
     res.send(
         `<h1>Register Your Home</h1>
-        <form method="POST" action="/add-home">
+        <form method="POST" action="/host/add-home">
             <input type="text" name="title" placeholder="Home Title" required>
             <input type="text" name="description" placeholder="Home Description" required>
             <input type="text" name="location" placeholder="Location" required>
@@ -31,10 +27,11 @@ app.get("/add-home", (req, res, next) => {
     next();
 });
 
-app.post("/add-home", (req, res, next) => {
+app.post("/host/add-home", (req, res, next) => {
     console.log("Home Details Received:", req.body);
     res.send(
         `<h1>Home Registered Successfully</h1>
+        <a href="/host/add-home">Add Another Home</a>
         <a href="/">Go Back to Home</a>`
     );
     next();
