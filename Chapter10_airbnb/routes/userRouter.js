@@ -6,7 +6,6 @@ userRouter.get("/", (req, res, next) => {
         `<h1>Welcome to Airbnb Clone Project</h1>
         <a href="/host/add-home">Add Home</a>`
     );
-    next();
 });
 
 module.exports = userRouter;
