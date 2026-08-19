@@ -20,11 +20,19 @@ app.get("/add-home", (req, res, next) => {
         `<h1>Register Your Home</h1>
         <form method="POST" action="/add-home">
             <input type="text" name="title" placeholder="Home Title" required>
-            <textarea name="description" placeholder="Home Description" required></textarea>
+            <input type="text" name="description" placeholder="Home Description" required>
             <input type="text" name="location" placeholder="Location" required>
             <input type="number" name="price" placeholder="Price per night" required>
             <button type="submit">Register Home</button>
         </form>`
+    );
+    next();
+});
+
+app.post("/add-home", (req, res, next) => {
+    res.send(
+        `<h1>Home Registered Successfully</h1>
+        <a href="/">Go Back to Home</a>`
     );
     next();
 });
