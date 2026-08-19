@@ -1,11 +1,11 @@
+//Core Modules
+const path = require("path");
+//Main Module for the Airbnb Application
 const express = require('express');
 const userRouter = express.Router();
 
 userRouter.get("/", (req, res, next) => {
-    res.send(
-        `<h1>Welcome to Airbnb Clone Project</h1>
-        <a href="/host/add-home">Add Home</a>`
-    );
+    res.sendFile(path.join(__dirname, "../views/home.html"));
 });
 
 module.exports = userRouter;
