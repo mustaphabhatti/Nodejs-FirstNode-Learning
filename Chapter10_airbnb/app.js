@@ -1,6 +1,8 @@
+//Main Module for the Airbnb Application
 const express = require('express');
-
+//Local Modules
 const userRouter = require('./routes/userRouter');
+const hostRouter = require('./routes/hostRouter');
 
 const app = express();
 
@@ -13,30 +15,7 @@ app.use(express.urlencoded());
 
 app.use(userRouter);
 
-app.get("/host/add-home", (req, res, next) => {
-    res.send(
-        `<h1>Register Your Home</h1>
-        <form method="POST" action="/host/add-home">
-            <input type="text" name="title" placeholder="Home Title" required>
-            <input type="text" name="description" placeholder="Home Description" required>
-            <input type="text" name="location" placeholder="Location" required>
-            <input type="number" name="price" placeholder="Price per night" required>
-            <button type="submit">Register Home</button>
-        </form>`
-    );
-    next();
-});
-
-app.post("/host/add-home", (req, res, next) => {
-    console.log("Home Details Received:", req.body);
-    res.send(
-        `<h1>Home Registered Successfully</h1>
-        <a href="/host/add-home">Add Another Home</a>
-        <a href="/">Go Back to Home</a>`
-    );
-    next();
-});
-
+app.use(hostRouter);
 
 const PORT = 3000;
 
