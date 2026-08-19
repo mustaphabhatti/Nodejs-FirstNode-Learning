@@ -7,6 +7,8 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.urlencoded());
+
 app.get("/", (req, res, next) => {
     res.send(
         `<h1>Welcome to Airbnb Clone Project</h1>
@@ -30,6 +32,7 @@ app.get("/add-home", (req, res, next) => {
 });
 
 app.post("/add-home", (req, res, next) => {
+    console.log("Home Details Received:", req.body);
     res.send(
         `<h1>Home Registered Successfully</h1>
         <a href="/">Go Back to Home</a>`
