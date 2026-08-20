@@ -1,13 +1,13 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const rootDir = require('../utils/pathUtil');
 
 const userRouter = express.Router();
 userRouter.use(bodyParser.urlencoded({ extended: false }));
 
 userRouter.use("/", (req, res, next) => {
-    console.log("First Middleware", req.url, req.method);
-    next();
+
 });
 
 userRouter.use("/submit-details",(req, res, next) => {

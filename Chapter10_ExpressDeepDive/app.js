@@ -3,13 +3,15 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 //Local Modules
-const requestlistener = require('./user');
+const userRouter = require('./routes/UserRouter');
+const contactRouter = require('./routes/ContactRouter');
+const rootDir = require('./utils/pathUtil');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/user', userRouter);
-app.use('/contact', contactRouter);
+app.use(userRouter);
+app.use(contactRouter);
 
 
 const PORT = 3001;
