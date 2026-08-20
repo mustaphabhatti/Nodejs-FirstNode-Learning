@@ -6,9 +6,11 @@ const bodyParser = require('body-parser');
 const requestlistener = require('./user');
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/user', userRouter);
+app.use('/contact', contactRouter);
+
 
 const PORT = 3001;
 
