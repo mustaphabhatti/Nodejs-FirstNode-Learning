@@ -8,10 +8,12 @@ contactRouter.use(bodyParser.urlencoded({ extended: false }));
 
 contactRouter.get("/contact-us", (req, res) => {
     res.sendFile(path.join(rootDir, "views", "contactus.html"));
+    next();
 });
 
 contactRouter.post("/contact-us", (req, res) => {
     res.sendFile(path.join(rootDir, "views", "InfoSubmitted.html"));
+    next();
 });
 
 module.exports = contactRouter;
