@@ -8,6 +8,7 @@ const hostRouter = require('./routes/hostRouter');
 
 const app = express();
 
+app.use(express.static(path.join(rootDir, "public")));
 app.use(express.urlencoded());
 app.use(userRouter);
 app.use("/host", hostRouter);
